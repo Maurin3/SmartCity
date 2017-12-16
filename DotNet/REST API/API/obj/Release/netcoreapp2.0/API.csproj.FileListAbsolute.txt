@@ -1,0 +1,13 @@
+E:\REST API\API\bin\Release\netcoreapp2.0\API.deps.json
+E:\REST API\API\bin\Release\netcoreapp2.0\API.runtimeconfig.json
+E:\REST API\API\bin\Release\netcoreapp2.0\API.runtimeconfig.dev.json
+E:\REST API\API\bin\Release\netcoreapp2.0\API.dll
+E:\REST API\API\bin\Release\netcoreapp2.0\API.pdb
+E:\REST API\API\bin\Release\netcoreapp2.0\Model.dll
+E:\REST API\API\bin\Release\netcoreapp2.0\Model.pdb
+E:\REST API\API\obj\Release\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
+E:\REST API\API\obj\Release\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+E:\REST API\API\obj\Release\netcoreapp2.0\API.AssemblyInfoInputs.cache
+E:\REST API\API\obj\Release\netcoreapp2.0\API.AssemblyInfo.cs
+E:\REST API\API\obj\Release\netcoreapp2.0\API.dll
+E:\REST API\API\obj\Release\netcoreapp2.0\API.pdb

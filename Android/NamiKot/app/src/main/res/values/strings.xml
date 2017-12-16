@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">NamiKot</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="login">Login</string>
+    <string name="signIn">Connection</string>
+    <string name="password">Password</string>
+    <string name="repeatPassword">Repeat password</string>
+    <string name="resetPassword">Password modification</string>
+    <string name="mail">Email address</string>
+    <string name="reset">Change</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_kots">Kots</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_map">Map</string>
+    <string name="title_list">List</string>
+    <string name="signUp">Sign Up</string>
+    <string name="signUpTitle">Sign Up</string>
+    <string name="signUpButton">Sign up</string>
+
+    <!-- Fragment profile -->
+    <string name="profile_last_name">Last name</string>
+    <string name="profile_first_name">First name</string>
+    <string name="profile_birthdate">Birthdate</string>
+
+</resources>

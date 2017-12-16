@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_kots"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_kots"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/navigation_messages"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="@string/title_messages"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_profile"
+        android:visible="true" />
+
+</menu>

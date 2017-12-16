@@ -1,0 +1,5 @@
+E:\REST API\API
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=API
+--content-root=E:\REST API\API
+--file=

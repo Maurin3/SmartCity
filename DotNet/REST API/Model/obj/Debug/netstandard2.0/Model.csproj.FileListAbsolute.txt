@@ -1,0 +1,17 @@
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.csproj.CoreCompileInputs.cache
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfoInputs.cache
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfo.cs
+E:\REST API\Model\bin\Debug\netstandard2.0\Model.deps.json
+E:\REST API\Model\bin\Debug\netstandard2.0\Model.dll
+E:\REST API\Model\bin\Debug\netstandard2.0\Model.pdb
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.dll
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.pdb
+G:\REST API\Model\bin\Debug\netstandard2.0\Model.deps.json
+G:\REST API\Model\bin\Debug\netstandard2.0\Model.dll
+G:\REST API\Model\bin\Debug\netstandard2.0\Model.pdb
+G:\REST API\Model\obj\Debug\netstandard2.0\Model.csproj.CoreCompileInputs.cache
+G:\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfoInputs.cache
+G:\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfo.cs
+G:\REST API\Model\obj\Debug\netstandard2.0\Model.dll
+G:\REST API\Model\obj\Debug\netstandard2.0\Model.pdb
+E:\REST API\Model\obj\Debug\netstandard2.0\Model.csprojResolveAssemblyReference.cache
