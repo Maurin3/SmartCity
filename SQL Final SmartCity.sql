@@ -255,8 +255,8 @@ create table [dbo].Building
 	postCode numeric(4) not null,
 	cityName varchar(50) not null,
 	floor_room numeric(2) not null,
-	longitude decimal(6) not null,
-	latitude decimal(6) not null,
+	longitude decimal(9,6) not null,
+	latitude decimal(9,6) not null,
 	constraint Building_pk primary key (street,numberOfTheHouse,postCode,cityName)
 )
 create table [dbo].Room

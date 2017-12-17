@@ -7,36 +7,36 @@
     tools:context="com.henallux.namikot.LoginActivity">
 
     <EditText
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="204dp"
-        android:ems="10"
-        android:hint="@string/login"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignStart="@+id/login"
-        android:layout_alignTop="@+id/login"
-        android:layout_marginTop="57dp"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/login"
+        android:layout_alignLeft="@+id/login"
+        android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitEnd"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/home_icon" />
 
     <Button
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:text="@string/signIn" />
+        android:text="@string/signIn"
+        android:layout_marginLeft="43dp"
+        android:layout_above="@+id/forgotPassword"
+        android:layout_alignLeft="@+id/password"
+        android:layout_marginBottom="24dp" />
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -53,35 +53,35 @@
         android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:text="@string/signUp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:visibility="visible"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="29dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/password"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="36dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/app_name"
-        android:scaleType="fitCenter"
-        android:visibility="visible"
-        app:srcCompat="@mipmap/home_icon" />
+        android:layout_alignRight="@+id/signIn" />
 
     <ProgressBar
         android:id="@+id/progressBarLogin"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/forgotPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp"
+        android:layout_alignTop="@+id/signIn"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/password"
         android:progressTint="@color/colorPrimary"
         android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/login"
+        android:inputType="textPersonName" />
 
 </RelativeLayout>

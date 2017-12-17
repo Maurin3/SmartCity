@@ -1,9 +1,58 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.henallux.namikot.MessagesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/other_user1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:text="Picavet Isabelle"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/message_other1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/other_user1"
+            android:layout_below="@+id/other_user1"
+            android:layout_marginTop="8dp"
+            android:text="@string/message_user1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/other_user2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="1"
+            android:text="Miguel Paeschen"
+            android:textSize="18sp"
+            android:layout_below="@+id/message_other1"
+            android:layout_alignLeft="@+id/message_other1" />
+
+        <TextView
+            android:id="@+id/message_other2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/other_user2"
+            android:layout_below="@+id/other_user2"
+            android:layout_marginTop="8dp"
+            android:text="@string/message_user2"
+            android:textSize="12sp" />
+    </RelativeLayout>
 
 </FrameLayout>

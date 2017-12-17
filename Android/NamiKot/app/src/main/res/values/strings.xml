@@ -18,10 +18,17 @@
     <string name="signUp">Sign Up</string>
     <string name="signUpTitle">Sign Up</string>
     <string name="signUpButton">Sign up</string>
+    <string name="badLoginExcept1">Login</string>
+    <string name="badLoginExcept2">or password incorrect.</string>
+    <string name="markerDesc">Kot n°</string>
 
     <!-- Fragment profile -->
     <string name="profile_last_name">Last name</string>
     <string name="profile_first_name">First name</string>
     <string name="profile_birthdate">Birthdate</string>
+
+
+    <string name="message_user1">Hello, I have a little problem with something. The...</string>
+    <string name="message_user2">Hello, here is the documents you wanted. All is enclosed up...</string>
 
 </resources>

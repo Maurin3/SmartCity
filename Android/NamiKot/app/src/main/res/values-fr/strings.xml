@@ -19,10 +19,16 @@
     <string name="signUp">Créer un compte</string>
     <string name="signUpTitle">Création d\'un compte</string>
     <string name="signUpButton">Créer</string>
+    <string name="badLoginExcept1">Login</string>
+    <string name="badLoginExcept2">ou mot de passe incorrect.</string>
+    <string name="markerDesc">Kot n°</string>
 
     <!-- Fragment profile -->
     <string name="profile_last_name">Nom</string>
     <string name="profile_first_name">Prénom</string>
     <string name="profile_birthdate">Date de naissance</string>
+
+    <string name="message_user1">Bonjour, j\'ai un petit problème. Le...</string>
+    <string name="message_user2">Bonjour, voici les documents que vous vouliez. Vous les trouverez...</string>
 
 </resources>
