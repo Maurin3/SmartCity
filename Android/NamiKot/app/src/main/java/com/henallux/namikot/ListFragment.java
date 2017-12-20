@@ -18,6 +18,8 @@ import com.henallux.namikot.Model.Building;
 import com.henallux.namikot.Model.Kot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 public class ListFragment extends Fragment {
     private ListView listView;
     private SharedPreferences preferences;
+    private ArrayList<Building> buildings;
 
     public ListFragment() {
         // Required empty public constructor
@@ -60,13 +63,11 @@ public class ListFragment extends Fragment {
         }
 
         protected void onPostExecute(ArrayList<Building> buildings){
-            //new KotTask().execute("http://namikot2.azurewebsites.net/api/Room", preferences.getString("token", null));
-            listView = getActivity().findViewById(R.id.list);
-            ArrayAdapter<Building> adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1, buildings);
-            listView.setAdapter(adapter);
+            new KotTask().execute("http://namikot2.azurewebsites.net/api/Room", preferences.getString("token", null));
+            ListFragment.this.buildings = buildings;
         }
     }
-    /*
+
     private class KotTask extends AsyncTask<String,Void,ArrayList<Kot>> {
         protected void onPreExecute(){
 
@@ -75,7 +76,7 @@ public class ListFragment extends Fragment {
         protected ArrayList<Kot> doInBackground(String... params){
             KotDAO kotDAO = new KotDAO();
             ArrayList<Kot> kots = new ArrayList<>();
-            ArrayList<Building> buildings = MapsFragment.this.buildings;
+            ArrayList<Building> buildings = ListFragment.this.buildings;
             try {
                 kots = kotDAO.getAllKots(params[0], params[1], buildings);
             }
@@ -86,14 +87,10 @@ public class ListFragment extends Fragment {
         }
 
         protected void onPostExecute(ArrayList<Kot> kots){
-            for(Kot kot : kots) {
-                LatLng markerBuilding = new LatLng(kot.getBuilding().getLatitude(), kot.getBuilding().getLongitude());
-                Marker marker = MapsFragment.this.getGoogleMap().addMarker(new MarkerOptions()
-                        .position(markerBuilding)
-                        .title(getString(R.string.markerDesc) + kot.getId())
-                        .snippet(kot.getBuilding().getNumberOfTheHouse() + ", " + kot.getBuilding().getStreet() + " \n "
-                                +kot.getBuilding().getPostCode() + " " + kot.getBuilding().getCityName()));
-            }
+
+            listView = getActivity().findViewById(R.id.list);
+            ArrayAdapter<Kot> adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_expandable_list_item_1, kots);
+            listView.setAdapter(adapter);
         }
-    }*/
+    }
 }

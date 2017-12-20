@@ -13469,7 +13469,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\etu31364\\.nuget\\packages\\": {},
+    "C:\\Users\\Maurine\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13478,17 +13478,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\REST API\\API\\API.csproj",
+      "projectUniqueName": "G:\\REST API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "E:\\REST API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\etu31364\\.nuget\\packages\\",
-      "outputPath": "E:\\REST API\\API\\obj\\",
+      "projectPath": "G:\\REST API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Maurine\\.nuget\\packages\\",
+      "outputPath": "G:\\REST API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\etu31364\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maurine\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13496,13 +13496,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\REST API\\Model\\Model.csproj": {
-              "projectPath": "E:\\REST API\\Model\\Model.csproj"
+            "G:\\REST API\\Model\\Model.csproj": {
+              "projectPath": "G:\\REST API\\Model\\Model.csproj"
             }
           }
         }
@@ -13516,47 +13516,47 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Pomelo.EntityFrameworkCore.MySql": {
+          "Microsoft.AspNet.Identity.Core": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.2.1, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
+          "Microsoft.AspNetCore.Identity": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "2.0.1"
-          },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-            "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.1, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           },
-          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "2.0.1"
+            "version": "[2.0.0, )"
           },
-          "Microsoft.AspNet.Identity.Core": {
+          "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
-            "version": "2.2.1"
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.1, )"
           },
           "Pomelo.EntityFrameworkCore.MySql.Design": {
             "target": "Package",
-            "version": "1.1.2"
-          },
-          "Microsoft.AspNetCore.Identity": {
-            "target": "Package",
-            "version": "2.0.1"
+            "version": "[1.1.2, )"
           }
         },
         "imports": [
@@ -13572,7 +13572,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'Microsoft.AspNet.Identity.Core 2.2.1' a été restauré en utilisant '.NETFramework,Version=v4.6.1' au lieu du framework cible du projet '.NETCoreApp,Version=v2.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"

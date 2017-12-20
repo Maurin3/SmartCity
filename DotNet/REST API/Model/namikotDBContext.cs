@@ -19,6 +19,7 @@ namespace Model
         public virtual DbSet<Note> Note { get; set; }
         public virtual DbSet<PicturePath> PicturePath { get; set; }
         public virtual DbSet<Room> Room { get; set; }
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
 
         public namikotDBContext(DbContextOptions<namikotDBContext> options) : base(options)
         {
@@ -166,11 +167,11 @@ namespace Model
 
                 entity.Property(e => e.Latitude)
                     .HasColumnName("latitude")
-                    .HasColumnType("decimal(5, 0)");
+                    .HasColumnType("decimal(9, 6)");
 
                 entity.Property(e => e.Longitude)
                     .HasColumnName("longitude")
-                    .HasColumnType("decimal(5, 0)");
+                    .HasColumnType("decimal(9, 6)");
             });
 
             modelBuilder.Entity<DeclarationConformity>(entity =>
@@ -482,6 +483,39 @@ namespace Model
                     .HasForeignKey(d => new { d.Street, d.NumberOfTheHouse, d.PostCode, d.CityName })
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Building_fk");
+            });
+
+            modelBuilder.Entity<UserInfo>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("numeric(5, 0)")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Birthdate)
+                    .HasColumnName("birthdate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasColumnName("firstName")
+                    .HasMaxLength(250);
+
+                entity.Property(e => e.IdAspNetUser)
+                    .IsRequired()
+                    .HasColumnName("idAspNetUser")
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasColumnName("lastName")
+                    .HasMaxLength(250);
+
+                entity.HasOne(d => d.IdAspNetUserNavigation)
+                    .WithMany(p => p.UserInfo)
+                    .HasForeignKey(d => d.IdAspNetUser)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("AspNetUser_fk");
             });
         }
     }

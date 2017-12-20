@@ -128,8 +128,8 @@ public class MapsFragment extends Fragment {
         protected void onPostExecute(ArrayList<Building> buildings){
             MapsFragment.this.buildings = buildings;
             int i = 1;
-            //new KotTask().execute("http://namikot2.azurewebsites.net/api/Room", preferences.getString("token", null));
-            for(Building building : buildings) {
+            new KotTask().execute("http://namikot2.azurewebsites.net/api/Room", preferences.getString("token", null));
+            /*for(Building building : buildings) {
                 LatLng markerBuilding = new LatLng(building.getLatitude(), building.getLongitude());
                 Marker marker = MapsFragment.this.getGoogleMap().addMarker(new MarkerOptions()
                         .position(markerBuilding)
@@ -137,7 +137,7 @@ public class MapsFragment extends Fragment {
                         .snippet(building.getNumberOfTheHouse() + ", " + building.getStreet() + " \n "
                                 +building.getPostCode() + " " + building.getCityName()));
                 i++;
-            }
+            }*/
         }
     }
 
@@ -165,7 +165,7 @@ public class MapsFragment extends Fragment {
                 Marker marker = MapsFragment.this.getGoogleMap().addMarker(new MarkerOptions()
                         .position(markerBuilding)
                         .title(getString(R.string.markerDesc) + kot.getId())
-                        .snippet(kot.getBuilding().getNumberOfTheHouse() + ", " + kot.getBuilding().getStreet() + " \n "
+                        .snippet(kot.getBuilding().getNumberOfTheHouse() + ", " + kot.getBuilding().getStreet()
                                 +kot.getBuilding().getPostCode() + " " + kot.getBuilding().getCityName()));
             }
         }

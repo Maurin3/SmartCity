@@ -56,7 +56,7 @@ public class KotDAO {
             kot.setSurface(jsonKot.getDouble("surface"));
             kot.setDesignForReducedMobility(jsonKot.getBoolean("isDesignedForReducedMobility"));
             kot.setMonthlyPriceWithAllCharges(jsonKot.getDouble("monthlyPriceWithAllCharges"));
-            kot.setMonthlyPriceNoChargesIncluded(jsonKot.getDouble("monthlyPriceNoChargeIncluded"));
+            kot.setMonthlyPriceNoChargesIncluded(jsonKot.getDouble("monthlyPriceNoChargesIncluded"));
             kot.setHasPrivateBathroom(jsonKot.getBoolean("hasPrivateBathroom"));
             kot.setHasPrivateKitchen(jsonKot.getBoolean("hasPrivateKitchen"));
             kot.setHasEquippedKitchen(jsonKot.getBoolean("hasEquippedKitchen"));

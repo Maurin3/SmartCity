@@ -16,25 +16,44 @@ namespace API.Controllers
         private SignInManager<ApplicationUser> _signInManager;
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
-            this._userManager=userManager;
-            this._signInManager=signInManager;
+            this._userManager = userManager;
+            this._signInManager = signInManager;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]NewUserDTO dto)
         {
-            if(ModelState.IsValid){
-                var newUser=new ApplicationUser{
-                        UserName=dto.UserName,
-                        Email = dto.Email
-                        
+            if (ModelState.IsValid) {
+                var newUser = new ApplicationUser {
+                    UserName = dto.UserName,
+                    Email = dto.Email
+
                 };
-                IdentityResult result = await _userManager.CreateAsync(newUser,dto.Password);
+                IdentityResult result = await _userManager.CreateAsync(newUser, dto.Password);
                 // TODO: retourner un Created à la place du Ok;
-            
-                return (result.Succeeded)?Ok():(IActionResult)BadRequest();
+
+                return (result.Succeeded) ? Ok() : (IActionResult)BadRequest();
             }
             return (IActionResult)BadRequest();
+        }
+
+        [HttpGet("{userName}")]
+        public async Task<IActionResult> Get([FromRoute] string userName)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+
+            var user = await _userManager.FindByNameAsync(userName);
+
+                if(user == null)
+                {
+                    return NotFound();
+                }
+
+            return Ok(user);
         }
     }
 }

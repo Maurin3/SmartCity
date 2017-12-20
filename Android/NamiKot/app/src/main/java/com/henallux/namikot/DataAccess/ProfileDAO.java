@@ -1,8 +1,7 @@
 package com.henallux.namikot.DataAccess;
 
-import com.henallux.namikot.Model.Login;
+import com.henallux.namikot.Model.User;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -10,15 +9,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Maurine on 17/12/2017.
  */
 
 public class ProfileDAO {
-    /*
-    public ArrayList<Login> getLogin(String urlToGo, String token) throws Exception {
+
+    public User getOneLogin(String urlToGo, String token) throws Exception {
         URL url = new URL(urlToGo);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -40,28 +39,20 @@ public class ProfileDAO {
         }
         br.close();
         jsonStringRead = stringBuilder.toString();
-        ArrayList<Login> buildings = this.jsonToBuildings(jsonStringRead);
+        User user = this.jsonToOneLogin(jsonStringRead);
         connection.disconnect();
-        return buildings;
+        return user;
     }
 
-    public ArrayList<Login> jsonToBuildings(String jsonString) throws Exception{
-        ArrayList<Login> buildings = new ArrayList<>();
-        Login building = null;
-        JSONArray jsonArray = new JSONArray(jsonString);
-        for (int i = 0; i < jsonArray.length(); i++){
-            JSONObject jsonBuilding = jsonArray.getJSONObject(i);
-            building = new Login();
-            building.setCityName(jsonBuilding.getString("cityName"));
-            building.setStreet(jsonBuilding.getString("street"));
-            building.setNumberOfTheHouse(jsonBuilding.getString("numberOfTheHouse"));
-            building.setFloorRoom(jsonBuilding.getInt("floorRoom"));
-            building.setPostCode(jsonBuilding.getInt("postCode"));
-            building.setLatitude(jsonBuilding.getDouble("latitude"));
-            building.setLongitude(jsonBuilding.getDouble("longitude"));
-            buildings.add(building);
-        }
-        return buildings;
+    public User jsonToOneLogin(String jsonString) throws Exception{
+        User user = new User();
+        JSONObject jsonLogin = new JSONObject(jsonString);
+        user.setLogin(jsonLogin.getJSONObject("idAspNetUserNavigation").getString("userName"));
+        user.setMail(jsonLogin.getJSONObject("idAspNetUserNavigation").getString("mail"));
+        user.setBirthdate((GregorianCalendar)jsonLogin.get("Birthdate"));
+        user.setFirstName(jsonLogin.getString("firstName"));
+        user.setLastName(jsonLogin.getString("lastName"));
+        return user;
     }
-    */
+
 }

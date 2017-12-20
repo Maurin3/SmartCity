@@ -27,7 +27,8 @@ namespace API.Controllers
         [HttpGet]
         public IEnumerable<Room> GetRoom()
         {
-            return _context.Room;
+            return _context.Room
+                .Include(m => m.Building);
         }
 
         // GET: api/Room/5
@@ -39,7 +40,9 @@ namespace API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var room = await _context.Room.SingleOrDefaultAsync(m => m.Id == id);
+            var room = await _context.Room
+                .Include(m => m.Building)
+                .SingleOrDefaultAsync(m => m.Id == id);
 
             if (room == null)
             {

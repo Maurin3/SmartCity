@@ -14,6 +14,7 @@ namespace Model
             DeclarationConformityUserId1Navigation = new HashSet<DeclarationConformity>();
             DeclarationConformityUserId2Navigation = new HashSet<DeclarationConformity>();
             Note = new HashSet<Note>();
+            UserInfo = new HashSet<UserInfo>();
         }
 
         public string Id { get; set; }
@@ -39,5 +40,6 @@ namespace Model
         public ICollection<DeclarationConformity> DeclarationConformityUserId1Navigation { get; set; }
         public ICollection<DeclarationConformity> DeclarationConformityUserId2Navigation { get; set; }
         public ICollection<Note> Note { get; set; }
+        public ICollection<UserInfo> UserInfo { get; set; }
     }
 }

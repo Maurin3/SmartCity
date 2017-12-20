@@ -31,7 +31,7 @@ public class LoginDAO {
         return jsonObject.getString("access_token");
     }
 
-    public String login(String urlToGo, String login, String password) throws Exception, BadLoginException {
+    public String login(String urlToGo, String login, String password) throws Exception {
         URL url = new URL(urlToGo);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setDoOutput(true);

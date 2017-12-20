@@ -18,6 +18,7 @@ import com.henallux.namikot.Exception.BadLoginException;
 public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences preferences;
+    private String login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 String password = textImputPassword.getText().toString();
                 String login = textImputLogin.getText().toString();
+
+                LoginActivity.this.login = login;
 
                 new LoginTask().execute("http://namikot2.azurewebsites.net/api/jwt", login, password);
             }
@@ -88,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("token", token);
+            editor.putString("userName", login);
             editor.commit();
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
