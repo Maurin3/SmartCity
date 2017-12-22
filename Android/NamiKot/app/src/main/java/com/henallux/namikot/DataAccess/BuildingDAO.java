@@ -29,10 +29,6 @@ public class BuildingDAO {
         connection.addRequestProperty("Authorization", "Bearer " + token);
         connection.setRequestProperty("Accept", "application/json");
         connection.connect();
-        int co = connection.getResponseCode();
-        if(connection.getResponseCode() == 400 || connection.getResponseCode() == 401){
-
-        }
         InputStream is = connection.getInputStream();
         InputStreamReader reader = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(reader);

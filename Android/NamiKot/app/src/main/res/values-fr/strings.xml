@@ -23,12 +23,24 @@
     <string name="badLoginExcept2">ou mot de passe incorrect.</string>
     <string name="markerDesc">Kot n°</string>
 
-    <!-- Fragment profile -->
     <string name="profile_last_name">Nom</string>
     <string name="profile_first_name">Prénom</string>
     <string name="profile_birthdate">Date de naissance</string>
 
     <string name="message_user1">Bonjour, j\'ai un petit problème. Le...</string>
     <string name="message_user2">Bonjour, voici les documents que vous vouliez. Vous les trouverez...</string>
+    <string name="modifyProfileButton">Modifier le profil</string>
+    <string name="buttonProfileSave">Sauver</string>
+    <string name="buttonProfileCancel">Annuler</string>
+
+    <string name="userInfoNotFoundException">Informations utilisateur non trouvées</string>
+    <string name="alreadyExistsExceptionPart1">Le login, mail</string>
+    <string name="alreadyExistsExceptionPart2">, ou les deux est (sont) déjà utilisé(s).</string>
+    <string name="passwordsNotConcording">Les mots de passe ne sont pas les mêmes</string>
+    <string name="loginPasswordEmpty">Le login, mot de passe ou les deux est (sont) vide(s)</string>
+    <string name="parseException">Le format de la date n\'est pas corrrect (JJ/MM/AAAA)</string>
+    <string name="internetConnection">Veuillez être sûr(e) que votre connexion internet est activée</string>
+    <string name="passwordNotCorrect">La longueur du mot de passe doit être de 8, \n le mot de passe requiert 6 lettres différentes \n
+                                            , 1 lettre en majuscule et 1 chiffre minimum.</string>
 
 </resources>

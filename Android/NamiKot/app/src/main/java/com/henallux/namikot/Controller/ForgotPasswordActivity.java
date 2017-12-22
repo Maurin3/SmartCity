@@ -1,10 +1,12 @@
-package com.henallux.namikot;
+package com.henallux.namikot.Controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.henallux.namikot.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 

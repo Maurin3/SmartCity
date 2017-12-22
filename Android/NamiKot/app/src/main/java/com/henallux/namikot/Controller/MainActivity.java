@@ -1,20 +1,21 @@
-package com.henallux.namikot;
+package com.henallux.namikot.Controller;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.*;
 import android.support.v7.app.AppCompatActivity;
 
 import android.view.*;
+import android.widget.Toast;
+
+import com.henallux.namikot.R;
 
 import static android.view.View.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private TextView mTextMessage;
     private MapsFragment mapFragment = new MapsFragment();
-    //Quand connexion à l'API pour savoir où on est, garder en mémoire l'emplacement (ou géocodage)
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListenerBottom
@@ -87,13 +88,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigationBottom = (BottomNavigationView) findViewById(R.id.navigation);
-        navigationBottom.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListenerBottom);
+        if(!CheckInternetConnection.isDataConnectionAvailable(getApplicationContext())){
+            Toast.makeText(MainActivity.this, R.string.loginPasswordEmpty, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
+        else{
+            BottomNavigationView navigationBottom = (BottomNavigationView) findViewById(R.id.navigation);
+            navigationBottom.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListenerBottom);
 
-        BottomNavigationView navigationTop = (BottomNavigationView) findViewById(R.id.navBar);
-        navigationTop.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListenerTop);
+            BottomNavigationView navigationTop = (BottomNavigationView) findViewById(R.id.navBar);
+            navigationTop.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListenerTop);
 
-        getMapFragment();
+            getMapFragment();
+        }
     }
 
     private void getMapFragment(){

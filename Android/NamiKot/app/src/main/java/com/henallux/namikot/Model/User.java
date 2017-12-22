@@ -12,6 +12,7 @@ public class User {
     private String firstName;
     private String lastName;
     private GregorianCalendar birthdate;
+    private String id;
 
     public String getLogin() {
         return login;
@@ -51,5 +52,13 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

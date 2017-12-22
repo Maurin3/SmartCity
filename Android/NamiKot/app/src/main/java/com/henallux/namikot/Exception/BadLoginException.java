@@ -1,7 +1,5 @@
 package com.henallux.namikot.Exception;
 
-import com.henallux.namikot.R;
-
 /**
  * Created by Maurine on 16/12/2017.
  */

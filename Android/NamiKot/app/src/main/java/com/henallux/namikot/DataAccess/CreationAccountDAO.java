@@ -1,5 +1,7 @@
 package com.henallux.namikot.DataAccess;
 
+import com.henallux.namikot.Exception.AlreadyExistsException;
+
 import org.json.JSONObject;
 
 import java.io.OutputStream;
@@ -21,10 +23,9 @@ public class CreationAccountDAO {
         return jsonObject;
     }
 
-    public void creationAccount(String urlToGo, String login, String mail, String password)throws Exception{
+    public String creationAccount(String urlToGo, String login, String mail, String password)throws Exception{
         String result;
         URL url = new URL(urlToGo);
-        //"http://namikot2.azurewebsites.net/api/Account"
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.addRequestProperty("Content-Type","application/json");
@@ -37,17 +38,12 @@ public class CreationAccountDAO {
         writer.write(jsonStringWrite);
         writer.flush();
         writer.close();
-        int co = connection.getResponseCode();
-        if (connection.getResponseCode() == 400){
-            String coucou = "coucou";
+        if (connection.getResponseCode() == 400){       //400 : existe déjà
+            throw new AlreadyExistsException(login, mail);
         }
-        else{
-            if(connection.getResponseCode() == 200){
-                result = "Account created";
-            }
-        }
-        //400 : existe déjà
+        result = connection.getResponseMessage();
         connection.disconnect();
+        return result;
     }
 
 }

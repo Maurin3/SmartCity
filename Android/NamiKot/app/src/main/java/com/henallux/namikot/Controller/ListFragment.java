@@ -1,5 +1,4 @@
-package com.henallux.namikot;
-
+package com.henallux.namikot.Controller;
 
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -11,15 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.henallux.namikot.DataAccess.BuildingDAO;
 import com.henallux.namikot.DataAccess.KotDAO;
 import com.henallux.namikot.Model.Building;
 import com.henallux.namikot.Model.Kot;
+import com.henallux.namikot.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**
@@ -38,9 +37,13 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        new BuildingTask().execute("http://namikot2.azurewebsites.net/api/Building", preferences.getString("token", null));
+        if (!CheckInternetConnection.isDataConnectionAvailable(getContext())){
+            Toast.makeText(ListFragment.this.getContext(), R.string.internetConnection, Toast.LENGTH_SHORT).show();
+        }
+        else{
+            preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            new BuildingTask().execute("http://namikot2.azurewebsites.net/api/Building", preferences.getString("token", null));
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
     }

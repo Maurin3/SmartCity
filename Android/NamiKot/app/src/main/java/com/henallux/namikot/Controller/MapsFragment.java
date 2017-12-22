@@ -1,4 +1,4 @@
-package com.henallux.namikot;
+package com.henallux.namikot.Controller;
 
 
 import android.Manifest;
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.*;
 import android.view.*;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
@@ -19,6 +20,7 @@ import com.henallux.namikot.DataAccess.BuildingDAO;
 import com.henallux.namikot.DataAccess.KotDAO;
 import com.henallux.namikot.Model.Building;
 import com.henallux.namikot.Model.Kot;
+import com.henallux.namikot.R;
 
 import java.util.ArrayList;
 
@@ -41,60 +43,56 @@ public class MapsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
-        mSupportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapwhere);
-        if (mSupportMapFragment == null) {
-            FragmentManager fragmentManager = getChildFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            mSupportMapFragment = SupportMapFragment.newInstance();
-            fragmentTransaction.replace(R.id.mapwhere, mSupportMapFragment).commit();
+        if (!CheckInternetConnection.isDataConnectionAvailable(getContext())){
+            Toast.makeText(MapsFragment.this.getContext(), R.string.internetConnection, Toast.LENGTH_SHORT).show();
         }
+        else {
+            mSupportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(com.henallux.namikot.R.id.mapwhere);
+            if (mSupportMapFragment == null) {
+                FragmentManager fragmentManager = getChildFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                mSupportMapFragment = SupportMapFragment.newInstance();
+                fragmentTransaction.replace(R.id.mapwhere, mSupportMapFragment).commit();
+            }
 
-        if (mSupportMapFragment != null) {
-            mSupportMapFragment.getMapAsync(new OnMapReadyCallback() {
+            if (mSupportMapFragment != null) {
+                mSupportMapFragment.getMapAsync(new OnMapReadyCallback() {
 
-                @Override
-                public void onMapReady(GoogleMap googleMap) {
-                    if (googleMap != null) {
-                        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-                        new BuildingTask().execute("http://namikot2.azurewebsites.net/api/Building", preferences.getString("token", null));
+                    @Override
+                    public void onMapReady(GoogleMap googleMap) {
+                        if (googleMap != null) {
+                            preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                            new BuildingTask().execute("http://namikot2.azurewebsites.net/api/Building", preferences.getString("token", null));
 
-                        googleMap.getUiSettings().setAllGesturesEnabled(true);
-                        googleMap.getUiSettings().setMapToolbarEnabled(true);
-                        googleMap.setMyLocationEnabled(true);
+                            googleMap.getUiSettings().setAllGesturesEnabled(true);
+                            googleMap.getUiSettings().setMapToolbarEnabled(true);
+                            googleMap.setMyLocationEnabled(true);
 
-                        LocationManager locationManager = (LocationManager) getActivity().getSystemService(getActivity().LOCATION_SERVICE);
-                        Criteria criteria = new Criteria();
-                        String bestProvider = locationManager.getBestProvider(criteria, true);
-                        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                                && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                            // TODO: Consider calling
-                            //    ActivityCompat#requestPermissions
-                            // here to request the missing permissions, and then overriding
-                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                            //                                          int[] grantResults)
-                            // to handle the case where the user grants the permission. See the documentation
-                            // for ActivityCompat#requestPermissions for more details.
-                            return;
+                            LocationManager locationManager = (LocationManager) getActivity().getSystemService(getActivity().LOCATION_SERVICE);
+                            Criteria criteria = new Criteria();
+                            String bestProvider = locationManager.getBestProvider(criteria, true);
+                            /*if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                                    && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                            }*/
+
+                            Location location = locationManager.getLastKnownLocation(bestProvider);
+                            CameraPosition cameraPosition;
+                            if (location != null) {
+                                LatLng markerLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                                cameraPosition = new CameraPosition.Builder().target(markerLocation).zoom(18.0f).build();
+                            } else {
+                                LatLng markerNamurGare = new LatLng(50.469335, 4.862534);
+                                cameraPosition = new CameraPosition.Builder().target(markerNamurGare).zoom(18.0f).build();
+                            }
+                            CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
+                            googleMap.moveCamera(cameraUpdate);
+
+                            setGoogleMap(googleMap);
                         }
 
-                        Location location = locationManager.getLastKnownLocation(bestProvider);
-                        CameraPosition cameraPosition;
-                        if (location != null){
-                            LatLng markerLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                            cameraPosition = new CameraPosition.Builder().target(markerLocation).zoom(18.0f).build();
-                        }
-                        else{
-                            LatLng markerNamurGare = new LatLng(50.469335, 4.862534);
-                            cameraPosition = new CameraPosition.Builder().target(markerNamurGare).zoom(18.0f).build();
-                        }
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
-                        googleMap.moveCamera(cameraUpdate);
-
-                        setGoogleMap(googleMap);
                     }
-
-                }
-            });
+                });
+            }
         }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_maps, container, false);

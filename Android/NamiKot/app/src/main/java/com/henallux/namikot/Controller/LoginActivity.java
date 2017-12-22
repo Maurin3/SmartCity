@@ -1,4 +1,4 @@
-package com.henallux.namikot;
+package com.henallux.namikot.Controller;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,13 +6,13 @@ import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import static android.view.View.*;
 
 import com.henallux.namikot.DataAccess.LoginDAO;
 import com.henallux.namikot.Exception.BadLoginException;
+import com.henallux.namikot.R;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -40,8 +40,17 @@ public class LoginActivity extends AppCompatActivity {
                 String login = textImputLogin.getText().toString();
 
                 LoginActivity.this.login = login;
-
-                new LoginTask().execute("http://namikot2.azurewebsites.net/api/jwt", login, password);
+                if (login.equals("") || password.equals("")){
+                    Toast.makeText(LoginActivity.this, R.string.loginPasswordEmpty, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (!CheckInternetConnection.isDataConnectionAvailable(getApplicationContext())){
+                        Toast.makeText(LoginActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        new LoginTask().execute("http://namikot2.azurewebsites.net/api/jwt", login, password);
+                    }
+                }
             }
         });
 
@@ -61,7 +70,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private class LoginTask extends AsyncTask<String,Void,String> {
         protected void onPreExecute(){

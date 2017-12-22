@@ -65,11 +65,19 @@ namespace API.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(userInfo).State = EntityState.Modified;
+            var user = await _context.UserInfo.Include(u => u.IdAspNetUserNavigation)
+                           .SingleOrDefaultAsync(m => m.IdAspNetUserNavigation.Id == id);
+
+            user.Birthdate = userInfo.Birthdate;
+            user.FirstName = userInfo.FirstName;
+            user.LastName = userInfo.LastName;
+
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -82,8 +90,6 @@ namespace API.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
         }
 
         // POST: api/UserInfo

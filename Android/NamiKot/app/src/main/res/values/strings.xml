@@ -30,5 +30,17 @@
 
     <string name="message_user1">Hello, I have a little problem with something. The...</string>
     <string name="message_user2">Hello, here is the documents you wanted. All is enclosed up...</string>
+    <string name="modifyProfileButton">Modify profile</string>
+    <string name="buttonProfileSave">Save</string>
+    <string name="buttonProfileCancel">Cancel</string>
+
+    <string name="userInfoNotFoundException">User informations not found</string>
+    <string name="alreadyExistsExceptionPart1">The login, mail</string>
+    <string name="alreadyExistsExceptionPart2">, or both is (are) already used</string>
+    <string name="passwordsNotConcording">Passwords are not the same</string>
+    <string name="loginPasswordEmpty">Login, password or both fields is (are) empty</string>
+    <string name="parseException">The date format is not correct (DD/MM/YYYY)</string>
+    <string name="internetConnection">Make sure that your Internet connection is enabled.</string>
+    <string name="passwordNotCorrect">Password length must be 8, \npassword requires 6 unique characters, \n1 letter in uppercase and 1 number.</string>
 
 </resources>
