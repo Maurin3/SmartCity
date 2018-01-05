@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, R.string.loginPasswordEmpty, Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if (!CheckInternetConnection.isDataConnectionAvailable(getApplicationContext())){
+                    if (!Utils.isDataConnectionAvailable(getApplicationContext())){
                         Toast.makeText(LoginActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
                     }
                     else{

@@ -1,9 +1,6 @@
 package com.henallux.namikot.Controller;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,8 +14,6 @@ import com.henallux.namikot.DataAccess.CreationAccountDAO;
 import com.henallux.namikot.Exception.AlreadyExistsException;
 import com.henallux.namikot.R;
 
-import static android.view.View.GONE;
-
 public class AccountCreationActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +21,7 @@ public class AccountCreationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_creation);
 
-        if(!CheckInternetConnection.isDataConnectionAvailable(getApplicationContext())){
+        if(!Utils.isDataConnectionAvailable(getApplicationContext())){
             Toast.makeText(AccountCreationActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(AccountCreationActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -45,10 +40,10 @@ public class AccountCreationActivity extends AppCompatActivity {
                     String password2 = textImputPassword2.getText().toString();
                     String login = textImputLogin.getText().toString();
                     String mail = textImputMail.getText().toString();
-                    /*
-                    if(!isMailCorrect(mail)){
-                        Toast.makeText(AccountCreationActivity.this, R.string.passwordsNotConcording, Toast.LENGTH_LONG).show();
-                    }*/
+
+                    if(!Utils.validate(mail)){
+                        Toast.makeText(AccountCreationActivity.this, R.string.mailNotValid, Toast.LENGTH_LONG).show();
+                    }
                     if(!password1.equals(password2)){
                         Toast.makeText(AccountCreationActivity.this, R.string.passwordsNotConcording, Toast.LENGTH_SHORT).show();
                     }
@@ -65,34 +60,23 @@ public class AccountCreationActivity extends AppCompatActivity {
         }
     }
 
-    public boolean isMailCorrect(String mail){
-        String[] mailSplit1 = mail.split("@");
-        if(mailSplit1.length <= 1){
-            return false;
-        }
-        else{
-            String[] mailSplit2 = mailSplit1[1].split(".");
-            return mailSplit2[0] != null && mailSplit2[1] != null;
-        }
-    }
-
     public boolean isPasswordCorrect(String password){
         boolean hasDigit = false;
         boolean hasUpperCaseChar = false;
         int uniquesChars = 0;
         char[] stringAllLettersSeparated = password.toCharArray();
         for(int i = 0; i < password.length(); i++){
-            char caracter = password.charAt(i);
-            if(Character.isDigit(caracter)){
-                hasDigit = Character.isDigit(caracter);
+            char character = password.charAt(i);
+            if(Character.isDigit(character)){
+                hasDigit = Character.isDigit(character);
             }
-            if(Character.isUpperCase(caracter)){
-                hasUpperCaseChar = Character.isUpperCase(caracter);
+            if(Character.isUpperCase(character)){
+                hasUpperCaseChar = Character.isUpperCase(character);
             }
             boolean isUnique = true;
             for(int j = 0; j < stringAllLettersSeparated.length && isUnique; j++){
                 if(i != j) {
-                    isUnique = caracter != stringAllLettersSeparated[j];
+                    isUnique = character != stringAllLettersSeparated[j];
                 }
             }
             if(isUnique){

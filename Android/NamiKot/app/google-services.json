@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "674796861119",
+    "firebase_url": "https://namikot-8b12b.firebaseio.com",
+    "project_id": "namikot-8b12b",
+    "storage_bucket": "namikot-8b12b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674796861119:android:0df22ade47f75c96",
+        "android_client_info": {
+          "package_name": "com.henallux.namikot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674796861119-mmooqosg6anq2o0mv5uf15ntrq7lqa7b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.henallux.namikot",
+            "certificate_hash": "bf182a43ec670de7d0dac810524d2ba06dc9b989"
+          }
+        },
+        {
+          "client_id": "674796861119-g328if7h4aan90rqbrhdp94e7b18db8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBolO7l0tMz-elt4psHp5_-O0uFFO3y8Ow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674796861119-g328if7h4aan90rqbrhdp94e7b18db8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

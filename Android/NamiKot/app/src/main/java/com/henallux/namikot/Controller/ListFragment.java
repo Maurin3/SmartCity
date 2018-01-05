@@ -37,7 +37,7 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (!CheckInternetConnection.isDataConnectionAvailable(getContext())){
+        if (!Utils.isDataConnectionAvailable(getContext())){
             Toast.makeText(ListFragment.this.getContext(), R.string.internetConnection, Toast.LENGTH_SHORT).show();
         }
         else{

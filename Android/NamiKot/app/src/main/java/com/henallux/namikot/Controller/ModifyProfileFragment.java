@@ -48,7 +48,7 @@ public class ModifyProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (!CheckInternetConnection.isDataConnectionAvailable(getContext())){
+        if (!Utils.isDataConnectionAvailable(getContext())){
             Toast.makeText(ModifyProfileFragment.this.getContext(), R.string.loginPasswordEmpty, Toast.LENGTH_SHORT).show();
         }
         else {
@@ -167,7 +167,6 @@ public class ModifyProfileFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
-
             goToProfileFragment();
         }
 

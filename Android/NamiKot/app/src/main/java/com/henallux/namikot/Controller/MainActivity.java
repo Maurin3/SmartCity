@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(!CheckInternetConnection.isDataConnectionAvailable(getApplicationContext())){
+        if(!Utils.isDataConnectionAvailable(getApplicationContext())){
             Toast.makeText(MainActivity.this, R.string.loginPasswordEmpty, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);

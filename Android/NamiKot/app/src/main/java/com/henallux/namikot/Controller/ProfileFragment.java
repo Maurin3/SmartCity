@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if(!CheckInternetConnection.isDataConnectionAvailable(getContext())){
+        if(!Utils.isDataConnectionAvailable(getContext())){
             Toast.makeText(ProfileFragment.this.getContext(), R.string.internetConnection, Toast.LENGTH_SHORT).show();
         }
         else{
