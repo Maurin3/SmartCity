@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Windows 10 Education\Documents\UWP\NamiKot-BackOffice\NamiKot-BackOffice\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-04T22:48:39.397</Modified>
+      <Modified>2018-01-07T19:57:13.086</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Windows 10 Education\Documents\UWP\NamiKot-BackOffice\NamiKot-BackOffice\bin\x86\Debug\NamiKot-BackOffice.exe">
       <PackagePath>entrypoint\NamiKot-BackOffice.exe</PackagePath>
-      <Modified>2018-01-04T22:48:38.388</Modified>
+      <Modified>2018-01-07T19:57:12.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Windows 10 Education\.nuget\packages\commonservicelocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -579,7 +579,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Windows 10 Education\Documents\UWP\NamiKot-BackOffice\NamiKot-BackOffice\bin\x86\Debug\NamiKot-BackOffice.xr.xml">
       <PackagePath>NamiKot-BackOffice.xr.xml</PackagePath>
-      <Modified>2018-01-04T22:45:40.216</Modified>
+      <Modified>2018-01-07T19:14:33.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -588,11 +588,11 @@
     <AppxPackagedFile Include="C:\Users\Windows 10 Education\Documents\UWP\NamiKot-BackOffice\NamiKot-BackOffice\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-04T22:45:41.332</Modified>
+      <Modified>2018-01-07T19:14:37.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Windows 10 Education\Documents\UWP\NamiKot-BackOffice\NamiKot-BackOffice\bin\x86\Debug\Core\NamiKot-BackOffice.exe">
       <PackagePath>NamiKot-BackOffice.exe</PackagePath>
-      <Modified>2018-01-04T22:48:39.392</Modified>
+      <Modified>2018-01-07T19:57:13.075</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

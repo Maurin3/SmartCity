@@ -24,3 +24,16 @@ E:\REST API\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
 E:\REST API\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
 E:\REST API\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
 G:\REST API\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\API.deps.json
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\API.dll
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\API.pdb
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\Model.dll
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\bin\Debug\netcoreapp2.0\Model.pdb
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.csprojResolveAssemblyReference.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.dll
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\API\obj\Debug\netcoreapp2.0\API.pdb

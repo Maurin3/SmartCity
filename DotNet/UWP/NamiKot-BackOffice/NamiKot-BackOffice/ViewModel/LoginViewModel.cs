@@ -8,28 +8,30 @@ using NamiKot_BackOffice.Model;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Views;
 using GalaSoft.MvvmLight.Command;
+using NamiKot_BackOffice.View;
 
 namespace NamiKot_BackOffice.ViewModel
 {
-    public class LoginViewModel : ViewModelBase
+    public class LoginViewModel : ViewModelBase, System.ComponentModel.INotifyPropertyChanged
     {
         private string token;
-        private ICommand goToDestinationCommand;
-        private INavigationService navigationService;
+        private INavigationService NavigationService { get; set; }
         public Login Login { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
 
         public LoginViewModel(INavigationService navigationService = null)
         {
-            this.navigationService = navigationService;
+            NavigationService = navigationService;
             string page = navigationService.CurrentPageKey;
-            //Login = login;
         }
 
         public async Task GoToAdmin()
         {
+            Login = new Login(UserName, Password);
             var service = new LoginService();
             Token = await service.GetToken(Login);
-            navigationService.NavigateTo("HomePage");
+            NavigationService.NavigateTo("HomePage");
         }
 
         public string Token
@@ -49,11 +51,7 @@ namespace NamiKot_BackOffice.ViewModel
         {
             get
             {
-                if(this.goToDestinationCommand == null)
-                {
-                    this.goToDestinationCommand = new RelayCommand(() => GoToAdmin());
-                }
-                return this.goToDestinationCommand;
+                return new RelayCommand(() => GoToAdmin());
             }
         }
 
@@ -61,17 +59,13 @@ namespace NamiKot_BackOffice.ViewModel
         {
             get
             {
-                if (this.goToDestinationCommand == null)
-                {
-                    this.goToDestinationCommand = new RelayCommand(() => GoToForgotPassword());
-                }
-                return this.goToDestinationCommand;
+                return new RelayCommand(() => GoToForgotPassword());
             }
         }
 
         public void GoToForgotPassword()
         {
-            navigationService.NavigateTo("ForgotPasswordPage");
+            NavigationService.NavigateTo("ForgotPasswordPage");
         }
     }
 }

@@ -43,5 +43,5 @@
     <string name="internetConnection">Make sure that your Internet connection is enabled.</string>
     <string name="passwordNotCorrect">Password length must be 8, \npassword requires 6 unique characters, \n1 letter in uppercase and 1 number.</string>
     <string name="mailNotValid">Invalid mail type. (Ex: john.doe@exmple.com)</string>
-
+    <string name="passwordChanged">Password has changed</string>
 </resources>

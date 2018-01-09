@@ -18,7 +18,7 @@
           "client_id": "674796861119-mmooqosg6anq2o0mv5uf15ntrq7lqa7b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.henallux.namikot",
+            "package_name": "com.henallux.namikot.Controller",
             "certificate_hash": "bf182a43ec670de7d0dac810524d2ba06dc9b989"
           }
         },

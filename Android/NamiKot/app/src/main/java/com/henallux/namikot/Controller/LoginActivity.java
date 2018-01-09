@@ -11,7 +11,9 @@ import android.widget.*;
 import static android.view.View.*;
 
 import com.henallux.namikot.DataAccess.LoginDAO;
+import com.henallux.namikot.MyFirebaseInstanceIdService;
 import com.henallux.namikot.Exception.BadLoginException;
+import com.henallux.namikot.MyFirebaseMessagingService;
 import com.henallux.namikot.R;
 
 
@@ -28,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         Button signIn = (Button) findViewById(R.id.signIn);
         TextView forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         TextView signUp = (TextView) findViewById(R.id.signUp);
-
 
         signIn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -57,16 +58,26 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(intent);
+                if (!Utils.isDataConnectionAvailable(getApplicationContext())){
+                    Toast.makeText(LoginActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(LoginActivity.this, AccountCreationActivity.class);
-                startActivity(intent);
+                if (!Utils.isDataConnectionAvailable(getApplicationContext())){
+                    Toast.makeText(LoginActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(LoginActivity.this, AccountCreationActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -101,6 +112,8 @@ public class LoginActivity extends AppCompatActivity {
             editor.putString("token", token);
             editor.putString("userName", login);
             editor.commit();
+            new MyFirebaseInstanceIdService(LoginActivity.this);
+            String firebaseToken = preferences.getString("FirebaseToken", null);
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
         }

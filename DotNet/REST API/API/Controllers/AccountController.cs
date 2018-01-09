@@ -30,9 +30,7 @@ namespace API.Controllers
 
                 };
                 IdentityResult result = await _userManager.CreateAsync(newUser, dto.Password);
-                // TODO: retourner un Created à la place du Ok;
-
-                return (result.Succeeded) ? Ok() : (IActionResult)BadRequest();
+                return (result.Succeeded)?Created("Account created in database", newUser):(IActionResult)BadRequest();
             }
             return (IActionResult)BadRequest();
         }
@@ -54,6 +52,31 @@ namespace API.Controllers
                 }
 
             return Ok(user);
+        }
+
+        [HttpPut("{userName}")]
+        public async Task<IActionResult> Put([FromRoute] string userName, [FromBody] NewUserDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByNameAsync(userName);
+            if(user != null)
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                if(dto.Email == user.Email)
+                {
+                    IdentityResult result = await _userManager.ResetPasswordAsync(user, token, dto.Password);
+                    return (result.Succeeded)? Ok() : (IActionResult)BadRequest();
+                }
+                return (IActionResult)BadRequest();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

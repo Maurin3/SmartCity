@@ -24,20 +24,20 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center"  Width="400">
             <StackPanel>
                 <TextBlock Text="Login" HorizontalAlignment="Center"></TextBlock>
-                <TextBox Name="Login" Width="250"></TextBox>
+                <TextBox Name="Login" Text="{Binding UserName, Mode=TwoWay}" Width="250"></TextBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Width="400">
             <StackPanel>
                 <TextBlock Text ="Mot de passe" HorizontalAlignment="Center"></TextBlock>
-                <PasswordBox Name="Password" Width="250"></PasswordBox>
+                <PasswordBox Name="Password" Password="{Binding Password, Mode=TwoWay}" Width="250"></PasswordBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button >Se connecter</Button>
+            <Button Command="{Binding GoToHomeCommand}">Se connecter</Button>
         </StackPanel>
         <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock><Hyperlink UnderlineStyle="None" Foreground="Black">Mot de passe oublié?</Hyperlink></TextBlock>
+            <Button Command="{Binding GoToForgotPasswordCommand}">Mot de passe oublié?</Button>
         </StackPanel>
         <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock><Hyperlink UnderlineStyle="None" Foreground="Black">Créér un compte</Hyperlink></TextBlock>

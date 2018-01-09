@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NamiKot_BackOffice.ViewModel
 {
-    public class HomeViewModel : ViewModelBase
+    public class HomeViewModel : ViewModelBase, System.ComponentModel.INotifyPropertyChanged
     {
         private INavigationService navigationService;
 

@@ -21,43 +21,40 @@ public class AccountCreationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_creation);
 
-        if(!Utils.isDataConnectionAvailable(getApplicationContext())){
-            Toast.makeText(AccountCreationActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(AccountCreationActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
-        else{
-            Button signUpButton = (Button) findViewById(R.id.signUpButton);
-            signUpButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    EditText textImputLogin = (EditText) findViewById(R.id.signUpLogin);
-                    EditText textImputPassword1 = (EditText) findViewById(R.id.signUpPassword1);
-                    EditText textImputPassword2 = (EditText) findViewById(R.id.signUpPassword2);
-                    EditText textImputMail = (EditText) findViewById(R.id.signUpMail);
 
-                    String password1 = textImputPassword1.getText().toString();
-                    String password2 = textImputPassword2.getText().toString();
-                    String login = textImputLogin.getText().toString();
-                    String mail = textImputMail.getText().toString();
+        Button signUpButton = (Button) findViewById(R.id.signUpButton);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            EditText textImputLogin = (EditText) findViewById(R.id.signUpLogin);
+            EditText textImputPassword1 = (EditText) findViewById(R.id.signUpPassword1);
+            EditText textImputPassword2 = (EditText) findViewById(R.id.signUpPassword2);
+            EditText textImputMail = (EditText) findViewById(R.id.signUpMail);
 
-                    if(!Utils.validate(mail)){
-                        Toast.makeText(AccountCreationActivity.this, R.string.mailNotValid, Toast.LENGTH_LONG).show();
-                    }
-                    if(!password1.equals(password2)){
-                        Toast.makeText(AccountCreationActivity.this, R.string.passwordsNotConcording, Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        if(!isPasswordCorrect(password1)){
-                            Toast.makeText(AccountCreationActivity.this, R.string.passwordNotCorrect, Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            new AccountCreationTask().execute("http://namikot2.azurewebsites.net/api/Account", login, mail, password1);
-                        }
+            String password1 = textImputPassword1.getText().toString();
+            String password2 = textImputPassword2.getText().toString();
+            String login = textImputLogin.getText().toString();
+            String mail = textImputMail.getText().toString();
+            if(!Utils.isDataConnectionAvailable(getApplicationContext())){
+                Toast.makeText(AccountCreationActivity.this, R.string.internetConnection, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                if (!Utils.validate(mail)) {
+                    Toast.makeText(AccountCreationActivity.this, R.string.mailNotValid, Toast.LENGTH_LONG).show();
+                }
+                if (!password1.equals(password2)) {
+                    Toast.makeText(AccountCreationActivity.this, R.string.passwordsNotConcording, Toast.LENGTH_SHORT).show();
+                } else {
+                    if (!isPasswordCorrect(password1)) {
+                        Toast.makeText(AccountCreationActivity.this, R.string.passwordNotCorrect, Toast.LENGTH_LONG).show();
+                    } else {
+                        new AccountCreationTask().execute("http://namikot2.azurewebsites.net/api/Account", login, mail, password1);
                     }
                 }
-            });
-        }
+            }
+            }
+        });
+
     }
 
     public boolean isPasswordCorrect(String password){

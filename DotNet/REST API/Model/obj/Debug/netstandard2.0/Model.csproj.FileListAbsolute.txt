@@ -16,3 +16,12 @@ G:\REST API\Model\obj\Debug\netstandard2.0\Model.dll
 G:\REST API\Model\obj\Debug\netstandard2.0\Model.pdb
 E:\REST API\Model\obj\Debug\netstandard2.0\Model.csprojResolveAssemblyReference.cache
 G:\REST API\Model\obj\Debug\netstandard2.0\Model.csprojResolveAssemblyReference.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\bin\Debug\netstandard2.0\Model.deps.json
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\bin\Debug\netstandard2.0\Model.dll
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\bin\Debug\netstandard2.0\Model.pdb
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.csprojResolveAssemblyReference.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.csproj.CoreCompileInputs.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfoInputs.cache
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.AssemblyInfo.cs
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.dll
+e:\Documents\SmartCity - Personnel\SmartCity\DotNet\REST API\Model\obj\Debug\netstandard2.0\Model.pdb

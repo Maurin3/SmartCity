@@ -41,6 +41,7 @@ namespace NamiKot_BackOffice.ViewModel
         private INavigationService CreateNavigationService()
         {
             var navigationService = new NavigationService();
+            navigationService.Configure("LoginPage", typeof(LoginPage));
             navigationService.Configure("HomePage", typeof(HomePage));
             navigationService.Configure("ForgotPasswordPage", typeof(ForgotPasswordPage));
             navigationService.Configure("AccountCreation", typeof(AccountCreation));

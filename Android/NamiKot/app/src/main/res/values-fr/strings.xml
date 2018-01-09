@@ -43,5 +43,6 @@
     <string name="passwordNotCorrect">La longueur du mot de passe doit être de 8, \n le mot de passe requiert 6 lettres différentes \n
                                             , 1 lettre en majuscule et 1 chiffre minimum.</string>
     <string name="mailNotValid">La forme du mail est invalide. (Ex: john.doe@exmple.com)</string>
+    <string name="passwordChanged">Le mot de passe a été modifié</string>
 
 </resources>

@@ -9,7 +9,7 @@
     DataContext="{Binding Source={StaticResource Locator}, Path=Home}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="{Binding Token}"></TextBlock>
+        <TextBlock Text="Coucou"></TextBlock>
     </Grid>
 </Page>
 

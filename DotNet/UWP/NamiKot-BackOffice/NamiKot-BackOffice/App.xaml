@@ -5,7 +5,9 @@
     xmlns:local="using:NamiKot_BackOffice"
     RequestedTheme="Light">
     <Application.Resources>
+        <ResourceDictionary>
         <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:NamiKot_BackOffice.ViewModel"/>
+        </ResourceDictionary>
     </Application.Resources>
 
 </Application>

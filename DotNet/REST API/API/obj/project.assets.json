@@ -13475,11 +13475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\REST API\\API\\API.csproj",
+      "projectUniqueName": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "G:\\REST API\\API\\API.csproj",
+      "projectPath": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Maurine\\.nuget\\packages\\",
-      "outputPath": "G:\\REST API\\API\\obj\\",
+      "outputPath": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13498,8 +13498,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "G:\\REST API\\Model\\Model.csproj": {
-              "projectPath": "G:\\REST API\\Model\\Model.csproj"
+            "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\Model\\Model.csproj": {
+              "projectPath": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\Model\\Model.csproj"
             }
           }
         }

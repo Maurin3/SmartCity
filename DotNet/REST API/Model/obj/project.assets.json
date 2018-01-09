@@ -6445,11 +6445,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\REST API\\Model\\Model.csproj",
+      "projectUniqueName": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "G:\\REST API\\Model\\Model.csproj",
+      "projectPath": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Maurine\\.nuget\\packages\\",
-      "outputPath": "G:\\REST API\\Model\\obj\\",
+      "outputPath": "e:\\Documents\\SmartCity - Personnel\\SmartCity\\DotNet\\REST API\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
