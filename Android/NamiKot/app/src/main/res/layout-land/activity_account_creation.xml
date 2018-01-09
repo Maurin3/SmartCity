@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.henallux.namikot.Controller.AccountCreationActivity">
+
+    <EditText
+        android:id="@+id/signUpLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/login"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="145dp"
+        android:layout_marginRight="23dp"
+        android:layout_alignTop="@+id/resetPassword"
+        android:layout_alignParentRight="true" />
+
+    <EditText
+        android:id="@+id/signUpMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signUpLogin"
+        android:layout_alignStart="@+id/signUpLogin"
+        android:layout_below="@+id/signUpLogin"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/mail"
+        android:inputType="textEmailAddress"
+        android:typeface="normal" />
+
+    <EditText
+        android:id="@+id/signUpPassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/signUpMail"
+        android:layout_alignRight="@+id/signUpMail"
+        android:layout_below="@+id/signUpMail"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/signUpPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/signUpPassword1"
+        android:layout_alignRight="@+id/signUpPassword1"
+        android:layout_below="@+id/signUpPassword1"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/repeatPassword"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signUpButton"
+        android:layout_below="@+id/signUpPassword1"
+        android:layout_marginLeft="90dp" />
+
+    <TextView
+        android:id="@+id/resetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="@string/signUpTitle"
+        android:layout_marginLeft="109dp"
+        android:layout_alignParentLeft="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCreationAccount"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/resetPassword"
+        android:layout_alignTop="@+id/signUpMail"
+        android:layout_marginTop="9dp"
+        android:progressTint="@color/colorPrimary"
+        android:visibility="gone" />
+
+</RelativeLayout>
